@@ -24,13 +24,13 @@ const Controls = ({ dispatch }) => {
         searchRef.current.value=""
     }
 
-    return  <div ref={contRef} className={`controlsContainer ${open && "open"}`}>
+    return  <div data-testid={"controlsDiv"} ref={contRef} className={`controlsContainer ${open && "open"}`}>
                 <div className="topRow">
                     <div className="buttons">
-                        <div onClick={()=>getData(API.getRandomBeer, 'details')} className="btn">RANDOM BREW</div>
-                        <div onClick={()=>getData(API.getRandomNonAlcoholic, 'details')} className="btn">RANDOM AF</div>
+                        <div data-testid={"randomBtn"} onClick={()=>getData(API.getRandomBeer, 'details')} className="btn">RANDOM BREW</div>
+                        <div data-testid={"randomBtn"} onClick={()=>getData(API.getRandomNonAlcoholic, 'details')} className="btn">RANDOM AF</div>
                     </div>
-                    <div onClick={()=>toggleOpen(!open)} className="searchBtn">
+                    <div data-testid={"searchBtn"} onClick={()=>toggleOpen(!open)} className="searchBtn">
                         <img src={lupa} alt="magnfying glass" />
                     </div>
                 </div>

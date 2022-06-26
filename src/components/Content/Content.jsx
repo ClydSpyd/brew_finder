@@ -16,24 +16,23 @@ const Content = ({ appState:{ data, isLoading, view }, dispatch }) => {
                         </div>
 
                     :data.error ?
-                        <div className="messageDiv">
+                        <div data-testid={"messageDiv"} className="messageDiv">
                             <>
                                 <p className='errorText'>{data.error}</p>
                             </>
                         </div>
 
                     :data.empty ?
-                        <div className="messageDiv">
+                        <div data-testid={"messageDiv"} className="messageDiv">
                             <h5>No results found!</h5>
                         </div>
 
                     :view === "details" ?
                         <BeerDetails data={data} isLoading={isLoading} />
 
-                    :view === "list" ? 
+                    :view === "list" &&
                         <ResultsList data={data} dispatch={dispatch} />
 
-                    : <h1>ö</h1>
                 }
             </div>
 }

@@ -17,6 +17,12 @@
   
     }
 
+    .placeholder{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     img.logo{
         height: 200px;
     }
