@@ -10,9 +10,9 @@ const Controls = ({ dispatch }) => {
     const contRef = useRef(null)
     const searchRef = useRef(null)
 
-    useEffect(()=>{
-        if(open)searchRef.current.focus()
-    },[open])
+    // useEffect(()=>{
+    //     if(open)searchRef.current.focus()
+    // },[open])
 
     const getData = async (fetchFunction, view, input) => {
         toggleOpen(false)
@@ -24,16 +24,20 @@ const Controls = ({ dispatch }) => {
     }
 
     return  <div ref={contRef} className={`controlsContainer ${open && "open"}`}>
-                <div className="topRow">
-                    <div className="buttons">
-                        <div onClick={()=>getData(API.getRandomBeer, 'details')} className="btn">RANDOM BREW</div>
-                        <div onClick={()=>getData(API.getRandomNonAlcoholic, 'details')} className="btn">RANDOM AF</div>
+                <div className="inner">
+                    <div className="topRow">
+                        <div className="buttons">
+                            <div onClick={()=>getData(API.getRandomBeer, 'details')} className="btn">RANDOM BREW</div>
+                            <div onClick={()=>getData(API.getRandomNonAlcoholic, 'details')} className="btn">RANDOM AF</div>
+                        </div>
+                        <div onClick={()=>toggleOpen(!open)} className="searchBtn">
+                            <img src={lupa} alt="magnfying glass" />
+                        </div>
                     </div>
-                    <div onClick={()=>toggleOpen(!open)} className="searchBtn">
-                        <img src={lupa} alt="magnfying glass" />
+                    <div>
+                        <Inputs getData={getData} API={API} searchRef={searchRef} />
                     </div>
                 </div>
-                <Inputs getData={getData} API={API} searchRef={searchRef} />
             </div>
 }
 

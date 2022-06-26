@@ -24,7 +24,7 @@
         position: absolute;
         border-radius: 4px;
         width: 120px;
-        top: 40px;
+        top: 39px;
         left: -2px;
         background-color: white;
         height: 0px;
@@ -34,6 +34,7 @@
         z-index: 10;
         text-align: center;
         transition: .3s ease-in-out all;
+        border: 1px solid $black;
         
         &.open{
             height: 80px;
@@ -44,6 +45,10 @@
         .menuItem{
             height: 30px;
             line-height: 30px;
+            &:hover{
+                background-color: $blue2;
+                color: $grey;
+            }
         }
     }
 
