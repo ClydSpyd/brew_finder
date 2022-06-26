@@ -16,7 +16,6 @@ export const getRandomBeer = async () => {
         const { data, headers } = await axios.get(`${base_url}/random`)
         
         return checkLimit(headers["x-ratelimit-remaining"]) ? data[0] : limitResponse
-        return { error: "Something went wrong" }
         
     } catch (error) {
         

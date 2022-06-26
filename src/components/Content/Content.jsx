@@ -12,7 +12,7 @@ const Content = ({ appState:{ data, isLoading, view }, dispatch }) => {
                     isLoading ?
                         <div className="loaderDiv">
                             <img src={loader} />
-                            <p>Fetching data...</p>
+                            <p>Fetching brew data...</p>
                         </div>
 
                     :data.error ?
