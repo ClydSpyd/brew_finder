@@ -1,0 +1,33 @@
+export const months = [
+    {str:'Jan', val:"01"},
+    {str:'Feb', val:"02"},
+    {str:'Mar', val:"03"},
+    {str:'Apr', val:"04"},
+    {str:'May', val:"05"},
+    {str:'Jun', val:"06"},
+    {str:'Jul', val:"07"},
+    {str:'Aug', val:"08"},
+    {str:'Sept', val:"09"},
+    {str:'Oct', val:"10"},
+    {str:'Nov', val:"11"},
+    {str:'Dec', val:"12"},
+]
+
+export const years = [
+    {str:'2022',val:'2022'},
+    {str:'2021',val:'2021'},
+    {str:'2020',val:'2020'},
+    {str:'2019',val:'2019'},
+    {str:'2018',val:'2018'},
+    {str:'2017',val:'2017'},
+    {str:'2016',val:'2016'},
+    {str:'2015',val:'2015'},
+    {str:'2014',val:'2014'},
+    {str:'2013',val:'2013'},
+    {str:'2012',val:'2012'},
+    {str:'2011',val:'2011'},
+    {str:'2010',val:'2010'},
+    {str:'2009',val:'2009'},
+    {str:'2008',val:'2008'},
+    {str:'2007',val:'2007'},
+]

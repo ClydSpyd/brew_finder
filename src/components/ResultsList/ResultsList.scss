@@ -1,0 +1,52 @@
+@import '../../styles/main.scss';
+
+.resultsListContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+
+    .listItem{
+        display: flex;
+        align-items: center;
+        width: 95%;
+        background-color: $grey;
+        margin-bottom: 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        border: 2px solid transparent;
+        transition: .3s ease-in-out all;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover{
+            border-color: $blue2;
+        }
+
+        .imgContainer{
+            height: 250px;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            img{
+                width: 250px;
+                height: 250px;
+                object-fit: contain;
+
+                &.logo{
+                    height: 100px;
+                }
+            }
+        }
+
+
+        .text{
+            *{
+                text-align: left;
+            }
+        }
+    }
+}

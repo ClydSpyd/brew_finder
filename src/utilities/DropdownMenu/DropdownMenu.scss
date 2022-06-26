@@ -1,0 +1,60 @@
+@import '../../styles/main.scss';
+
+.dropdown{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: $grey;
+    width: 120px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: .3s ease-in-out all;
+    border: 2px solid $grey;
+    position: relative;
+
+    &:hover{
+        border-color: $blue2;
+    }
+
+    .items{
+        position: absolute;
+        border-radius: 4px;
+        width: 120px;
+        top: 40px;
+        left: -2px;
+        background-color: white;
+        height: 0px;
+        opacity: 0;
+        pointer-events: none;
+        overflow: scroll;
+        z-index: 10;
+        text-align: center;
+        transition: .3s ease-in-out all;
+        
+        &.open{
+            height: 80px;
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .menuItem{
+            height: 30px;
+            line-height: 30px;
+        }
+    }
+
+    img{
+        height: 25px;
+        margin-right: 10px;
+    }
+
+    h6.dropText{
+        color: $black;
+        font-size: 16px;
+        font-weight: 700;
+    }
+}
