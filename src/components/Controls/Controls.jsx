@@ -10,9 +10,9 @@ const Controls = ({ dispatch }) => {
     const contRef = useRef(null)
     const searchRef = useRef(null)
 
-    // useEffect(()=>{
-    //     if(open)searchRef.current.focus()
-    // },[open])
+    useEffect(()=>{
+        if(open)searchRef.current.focus()
+    },[open])
 
     const getData = async (fetchFunction, view, input) => {
         toggleOpen(false)
