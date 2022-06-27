@@ -25,15 +25,15 @@ const BeerDetails = ({ data }) => {
                 <div className="stats">
                     <div data-testid={"statDiv"} className="stat">
                         <h6>ABV</h6>
-                        <h5>{data.abv}%</h5>
+                        <h5>{data.abv ? `${data.abv}\%` : "-"}</h5>
                     </div>
                     <div data-testid={"statDiv"} className="stat">
                         <h6>IBU</h6>
-                        <h5>{data.ibu}</h5>
+                        <h5>{data.ibu ? data.ibu : "-"}</h5>
                     </div>
                     <div data-testid={"statDiv"} className="stat">
                         <h6>PH</h6>
-                        <h5>{data.ph}</h5>
+                        <h5>{data.ph ? data.ph : "-"}</h5>
                     </div>
                 </div>
             </div>
