@@ -10,17 +10,21 @@ const Inputs = ({ getData, API, searchRef }) => {
     const [ error, setError ] = useState(false)
 
     useEffect(()=>{
-        if(params.type===API.getBrewedBefore)searchRef.current.value=""
+        if(params.type===API.getBrewedBefore){
+            searchRef.current.value="";
+        }
     },[params.type])
-
+    
     const handleSearch = () => {
         if(!regex.test(params.input)) return setError(true)
         getData(params.type, 'list', params.input);
         setParams({type:API.getTextSearch, input:""})
     }
-
+    
     const handleDateSelect = (value, isMonth) => {
+        
         const newValue = 
+            params.type === API.getTextSearch ? value : 
             (!isMonth && params.input == "") ? value : 
             (!isMonth && params.input.length===4) ? value : 
             (isMonth && params.input.length === 4) ? `${value}-${params.input}` :
