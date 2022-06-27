@@ -2,6 +2,13 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import Content from './Content';
 
+const dummyData = [
+    {
+        name:"hello",
+        description:"world"
+    }
+]
+
 describe('render Content elements', () => {
  
     it('renders error message when receiving error response', () => {
@@ -16,10 +23,16 @@ describe('render Content elements', () => {
         expect(emptyMsg).toBeTruthy()
     })
 
-    it('renders correct component based on view prop', () => {
-        const { getByTestId } = render(<Content appState={{data:{},view:"details"}} />)
+    it('renders Details component based on view prop', () => {
+        let { getByTestId } = render(<Content appState={{data:{},view:"details"}} />)
         const beerDetails = getByTestId('beerDetails');
         expect(beerDetails).toBeTruthy()
+        
+    })
+    it('renders List component based on view prop', () => {
+        let { getByTestId } = render(<Content appState={{data:dummyData,view:"list"}} />)
+        const resultsList = getByTestId('resultsList');
+        expect(resultsList).toBeTruthy()
     })
 
 })

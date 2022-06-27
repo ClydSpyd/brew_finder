@@ -19,7 +19,7 @@ export const getRandomBeer = async () => {
         
     } catch (error) {
         
-        return { error: "Something went wrong" }
+        return { error: error.message }
     }
 }
 
@@ -33,7 +33,7 @@ export const getRandomNonAlcoholic = async () => {
         return checkLimit(headers["x-ratelimit-remaining"]) ? randomBeer : limitResponse
         
     } catch (error) {
-        return { error: "Something went wrong" }
+        return { error: error.message }
         
     }
 }
@@ -47,7 +47,7 @@ export const getTextSearch = async ( searchTerm ) => {
         return checkLimit(headers["x-ratelimit-remaining"]) ? result : limitResponse
         
     } catch (error) {
-        return { error: "Something went wrong" }
+        return { error: error.message }
         
     }
 }
@@ -61,7 +61,7 @@ export const getBrewedBefore = async ( inputDate ) => {
         return checkLimit(headers["x-ratelimit-remaining"]) ? result : limitResponse
         
     } catch (error) {
-        return { error: "Something went wrong" }
+        return { error: error.message }
         
     }
 }

@@ -42,6 +42,7 @@ const Inputs = ({ getData, API, searchRef }) => {
                         <p>Brew name</p>
                         <input
                             ref={searchRef}
+                            data-testid={"inputElement"}
                             onChange={()=>setError(false)}
                             onFocus={()=>setParams({type:API.getTextSearch, input:''})}
                             onKeyDown={e=>{if(e.key==="Enter"&&params.input!=='')handleSearch()}}
@@ -66,7 +67,10 @@ const Inputs = ({ getData, API, searchRef }) => {
                         </div>
                     </div>
                 </div>
-                <div onClick={handleSearch} className={returnBtnClass()}>Let's go!</div>
+                <div
+                    data-testid={"inputSearchBtn"}
+                    onClick={handleSearch}
+                    className={returnBtnClass()}>Let's go!</div>
             </div>
 }
 

@@ -7,10 +7,10 @@ const ResultsList = ({ data, dispatch }) => {
     const handleSelection = payload => {
         dispatch({type: 'select_list_item', payload})
     }
-    return  <div className="resultsListContainer">
+    return  <div data-testid={"resultsList"} className="resultsListContainer">
                 {
                     data.map((item, index ) => {
-                        return  <div onClick={()=>handleSelection(item)} key={`item_${index}`} className="listItem">
+                        return  <div data-testid={"listItem"} onClick={()=>handleSelection(item)} key={`item_${index}`} className="listItem">
                                     {
                                         item.image_url ?
                                             <div className="imgContainer">
@@ -24,7 +24,7 @@ const ResultsList = ({ data, dispatch }) => {
 
                                     }
                                     <div className="text">
-                                        <h3>{item.name}</h3>
+                                        <h3 data-testid={"itemName"}>{item.name}</h3>
                                         <p>{item.description}</p>
                                     </div>
                                 </div>

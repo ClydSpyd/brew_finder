@@ -18,13 +18,13 @@ const DropdownMenu = ({ reset, type, items, callback, initial }) => {
         toggleOpen(false)
     }
 
-    return  <div onClick={()=>{if(!open)toggleOpen(true)}} className="dropdown">
+    return  <div data-testid={"inputElement"} onClick={()=>{if(!open)toggleOpen(true)}} className="dropdown">
                 <img src={chevron} alt="chevron" />
-                <h6 className='dropText'>{selected ? selected : type}</h6>
+                <h6 data-testid={"dropText"} className='dropText'>{selected ? selected : type}</h6>
                 <div onMouseLeave={()=>toggleOpen(false)} className={`items ${open && "open"}`}>
                     {
                         items.map((item, index) => 
-                            <div onClick={()=>handleSelection(item)} key={`item_${index}`} className="menuItem">{item.str}</div>
+                            <div data-testid={"menuItem"} onClick={()=>handleSelection(item)} key={`item_${index}`} className="menuItem">{item.str}</div>
                         )
                     }
                 </div>

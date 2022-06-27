@@ -18,6 +18,8 @@ describe('render Control elements', () => {
         expect(container.classList.contains('open')).toBeFalsy()
         fireEvent.click(btn)
         expect(container.classList.contains('open')).toBeTruthy()
+        fireEvent.click(btn)
+        expect(!container.classList.contains('open')).toBeTruthy()
     })
     
 })
