@@ -27,7 +27,7 @@ export const getRandomNonAlcoholic = async () => {
     
     try {
 
-        const { data, headers } = await axios.get(`${base_url}?abv_lt=0.6`)
+        const { data, headers } = await axios.get(`${base_url}?abv_lt=0.6&per_page=80`)
         const randomBeer = data[Math.floor(Math.random() * data.length)]
         
         return checkLimit(headers["x-ratelimit-remaining"]) ? randomBeer : limitResponse
@@ -41,7 +41,7 @@ export const getRandomNonAlcoholic = async () => {
 export const getTextSearch = async ( searchTerm ) => {
     try {
 
-        const { data, headers } = await axios.get(`${base_url}?beer_name=${searchTerm}`)
+        const { data, headers } = await axios.get(`${base_url}?beer_name=${searchTerm}&per_page=80`)
         const result = data.length ? data : emptyResponse
         
         return checkLimit(headers["x-ratelimit-remaining"]) ? result : limitResponse
@@ -55,7 +55,7 @@ export const getTextSearch = async ( searchTerm ) => {
 export const getBrewedBefore = async ( inputDate ) => {
     try {
         
-        const { data, headers } = await axios.get(`${base_url}?brewed_before=${inputDate}`)
+        const { data, headers } = await axios.get(`${base_url}?brewed_before=${inputDate}&per_page=80`)
         const result = data.length ? data : emptyResponse
         
         return checkLimit(headers["x-ratelimit-remaining"]) ? result : limitResponse
