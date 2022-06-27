@@ -27,7 +27,7 @@ export const getRandomNonAlcoholic = async () => {
     
     try {
 
-        const { data, headers } = await axios.get(`${base_url}?abv_lt=0.6&per_page=80`)
+        const { data, headers } = await axios.get(`${base_url}?abv_lt=0.6`)
         const randomBeer = data[Math.floor(Math.random() * data.length)]
         
         return checkLimit(headers["x-ratelimit-remaining"]) ? randomBeer : limitResponse
